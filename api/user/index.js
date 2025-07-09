@@ -23,6 +23,23 @@
 
     // Create Customer - TO BE USED FOR TESTING ONLY (for now)
     app.post("/customers", function(req, res, next) {
+
+        req.body.CardIssuer = CardIssuer
+        req.body.customerIssuerBank = customerIssuerBank
+        req.body.transactionIssuingBank = transactionIssuingBank
+
+        req.body.securePaymentToken = securePaymentToken
+        req.body.userTokenizedCard = userTokenizedCard
+        req.body.CardTokenID = CardTokenID
+        
+        req.body.MaskedCardNumber = MaskedCardNumber
+        req.body.PartialCardNumber = PartialCardNumber
+        req.body.MaskedCardNumberLast4 = MaskedCardNumberLast4
+        
+        req.body.CCExpDate = CCExpDate
+        req.body.userCVVCode = userCVVCode
+        req.body.CCExp_Month = CCExp_Month
+
         var options = {
             uri: endpoints.customersUrl,
             method: 'POST',
